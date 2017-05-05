@@ -11,11 +11,21 @@ function saveBookmark(e){
 		url:site_url
 	};
 	
+	/*
 	//Test Local storage
 	localStorage.setItem('test','Hello world!');
 	console.log(localStorage.getItem('test'));
 	ocalStorage.removeItem('test');
-	console.log(localStorage.getItem('test'));
+	console.log(localStorage.getItem('test'));*/
+
+	//Test if Bookmarks is  null
+	if(localStorage.getItem('bookmarks')===null){
+		var bookmarks= [];
+		//Add to Array
+		bookmarks.push(bookmark);
+		//Save to localstorage
+		localStorage.setItem('bookmarks',JSON.stringify(bookmarks)
+	}
 	//Prevent form from submiting
 	e.preventDefault();
 }
