@@ -12,7 +12,10 @@ function saveBookmark(e){
 	};
 	
 	//Test Local storage
-	
+	localStorage.setItem('test','Hello world!');
+	console.log(localStorage.getItem('test'));
+	ocalStorage.removeItem('test');
+	console.log(localStorage.getItem('test'));
 	//Prevent form from submiting
 	e.preventDefault();
 }
