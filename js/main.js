@@ -38,6 +38,8 @@ function saveBookmark(e){
 		localStorage.setItem('bookmarks',JSON.stringify(bookmarks));
 	}
 
+	//Clear form
+	document.getElementById('myForm').reset();
 	//Refetch bookmarks
 	fetchBookmarks();
 	//Prevent form from submiting
@@ -81,16 +83,16 @@ function fetchBookmarks(){
 
 }
 
-function validateForm(){
+function validateForm(siteName,siteUrl){
 
-	if(!site_name || !site_url){
+	if(!siteName || !siteUrl){
 		alert("Please fill in the form");
 		return false;
 	}
 	var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
 	var regex = new RegExp(expression);
 
-	if(!site_url.match(regex)){
+	if(!siteUrl.match(regex)){
 		alert("Invalid URL");
 		return false;
 	}
