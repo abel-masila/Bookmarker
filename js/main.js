@@ -24,7 +24,14 @@ function saveBookmark(e){
 		//Add to Array
 		bookmarks.push(bookmark);
 		//Save to localstorage
-		localStorage.setItem('bookmarks',JSON.stringify(bookmarks)
+		localStorage.setItem('bookmarks',JSON.stringify(bookmarks));
+	} else{
+		//Get bookmarks from localStorage
+		var bookmarks=JSON.parse(localStorage.getItem('bookmarks'));
+		//Add Bookmark to array
+		bookmarks.push(bookmark);
+		//Re-set it back to localStorage
+		localStorage.setItem('bookmarks',JSON.stringify(bookmarks));
 	}
 	//Prevent form from submiting
 	e.preventDefault();
